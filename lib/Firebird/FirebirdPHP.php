@@ -9,7 +9,7 @@ use PDO;
 
 class FirebirdPHP
 {
-    private static $driver   =  "firebird";
+    private static $driver = "firebird";
     private static $host;
     private static $password;
     private static $user;
@@ -34,9 +34,12 @@ class FirebirdPHP
     /**
      * Sets the credentials to connect to database
      */
-    public static function config(string $envPath): void
+    public static function config(string $host, string $password, string $user, string $name): void
     {
-        EnvFiles::loadEnv($envPath);
+        self::$host = $host;
+        self::$password = $password;
+        self::$user = $user;
+        self::$databaseName = $name;
     }
 
 

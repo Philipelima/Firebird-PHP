@@ -4,7 +4,7 @@
 require __DIR__ . "/../vendor/autoload.php";
 
 use FirebdPHP\Firebird\QueryRunner;
-use FirebdPHP\Firebird\Table;
+use FirebdPHP\Firebird\Table\Table;
 
 // Create new Table
 // (new TablesFirebird)->createTable('TESTE4', [
@@ -24,11 +24,15 @@ QueryRunner::run(
                 "type" => "int",
                 "increment",
                 "primary"
-
             ],
             "name" => [
                 "type" => "varchar",
                 "limit" => 255
+            ],
+            "email" => [
+                "type" => "varchar",
+                "limit" => 255,
+                "unique"
             ],
             "age" => [
                 "type" => "int",
@@ -36,7 +40,25 @@ QueryRunner::run(
             "city" => [
                 "type" => "varchar?",
                 "limit" => 255
-            ]
+            ],
+            "state" => [
+                "type" => "varchar",
+                "limit" => 50,
+                "reference" => [
+                    "table" => "states",
+                    "field" => "acronym",
+                    "onDelete" => "cascade"
+                ]
+            ],
+            "createdAt" => [
+                "type" => "timestamp",
+                "default" => "now"
+            ],
+            "theme" => [
+                "type" => "varchar",
+                "limit" => 15,
+                "default" => "dark"
+            ],
         ]
     )
 );

@@ -1,16 +1,23 @@
 {
-    "name": "philipelima/firebd-php",
-    "description": "A sql query builder capable of dealing with the firebird sgbd.",
-    "authors": [
-        {
-            "name": "Philipe M. Lima",
-            "email": "philipematheus.lim@gmail.com",
-            "homepage": "http://linkdin.com/in/philipe-matheus-lima"
-        }
-    ],
-    "autoload": {
-        "psr-4": {
-            "FirebdPHP\\": "lib/"
-        }
+  "name": "philipelima/firebd-php",
+  "description": "A sql query builder capable of dealing with the firebird sgbd.",
+  "authors": [
+    {
+      "name": "Philipe M. Lima",
+      "email": "philipematheus.lim@gmail.com",
+      "homepage": "http://linkdin.com/in/philipe-matheus-lima"
     }
+  ],
+  "autoload": {
+    "psr-4": {
+      "FirebdPHP\\": "lib/"
+    }
+  },
+  "scripts": {
+    "test": "./vendor/bin/pest",
+    "coverage": "./vendor/bin/pest --coverage"
+  },
+  "require-dev": {
+    "pestphp/pest": "^1.21"
+  }
 }
