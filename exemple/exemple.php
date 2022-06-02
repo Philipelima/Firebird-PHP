@@ -6,15 +6,6 @@ require __DIR__ . "/../vendor/autoload.php";
 use FirebdPHP\Firebird\QueryRunner;
 use FirebdPHP\Firebird\Table\Table;
 
-// Create new Table
-// (new TablesFirebird)->createTable('TESTE4', [
-
-//     'name:varchar:255:notNull',
-//     'age:integer:notNull',
-//     'city:varchar:255:notNull',
-//     'state:varchar:255'
-
-// ]);
 
 QueryRunner::run(
     Table::create(
@@ -64,5 +55,3 @@ QueryRunner::run(
 );
 
 
-//Show All Tables
-// (new TablesFirebird)->getTablesInDatabase();
